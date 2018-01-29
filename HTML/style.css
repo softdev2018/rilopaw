@@ -1,0 +1,124 @@
+body{
+  /*background-color: #698995;
+  background-image: url("gambar/alienlogo.png");
+  background-repeat: space;
+  background-attachment: fixed;
+  background-position: center;
+  */
+  background: #698995 url("gambar/alienlogo.png") no-repeat fixed center right;
+}
+
+#menu_web{ /* # itu untuk id */
+  /*background-color: rgb(121, 0, 0);*/
+  /* margin : top right bottom left*/
+  margin: 10px 0 50px 0;
+  position: relative;
+  top: 50px;
+  left: 20px;
+}
+
+.menu{ /* . untuk class */
+  text-decoration : none;
+  display         : inline-block;
+  /*height          : 50px;
+  width           : 100px;*/
+
+  border : 2px solid black;
+  padding: 10px 5px;
+}
+
+.menu:link{ /*kondisi biasa*/
+  background  : grey;
+  color       : white;
+}
+
+.menu:visited{ /*kondisi setelah dikunjungi*/
+  background  : cyan;
+  color       : white;
+}
+
+.menu:hover{ /*kondisi saat mouse hover*/
+  background  : white;
+  color       : blue;
+}
+
+.menu:active{ /*saat diklik*/
+  background  : grey;
+  color       : green;
+}
+h1{
+  color       : #70c2ce;
+  text-align  : center;
+  text-decoration: underline;
+}
+h2{
+  color     : blue;
+  font-size : 23px;
+  text-align: center;
+  text-transform: uppercase;
+}
+
+#teks_panjang{
+  text-align      : justify;
+  text-indent     : 30px;   /*awal paragraf*/
+  letter-spacing  : 2px;
+  word-spacing    : 2px;
+  line-height     : 20px;
+}
+
+#teks_pendek{
+  font-size   : 24px;
+  font-family : monospace;
+  font-weight : 500;
+  background  : yellow;
+  width       : 50%;
+  height      : 200px; /*adanya widht dan height disesuaikan dengan adanya max-width dan max-height*/
+  max-width   : 30%;
+  max-height   : 100px;
+  /*visibility: hidden;*/ /*untuk hide elemen, space tetap ada*/
+  /*display: none;*/ /*untuk hapus elemen, space hilang*/
+}
+/*
+#h2_index{
+  position: fixed;
+  top     : 120px;
+  left    : 400px;
+}
+*/
+ul, ol, dl{
+  float: left;
+  margin: 0px;
+  padding: 0px;
+  width: 33.33%;
+}
+
+#copyright{
+  text-align: center;
+}
+
+
+/*
+  HOVER
+  keadaan ketika mouse berada pada elemen tertentu
+  1. diri sendiri
+  2. elemen lain:
+    > langsung di dalam
+    + langsung setelah
+    (space) berada di suatu tempat (dalam container)
+*/
+
+h1:hover{
+  color : black;
+}
+
+h1:hover+h2{
+  color : red;
+}
+
+/*
+  FOCUS
+  keadaan ketika input di klik
+*/
+input:focus, textarea:focus{
+  background : cyan;
+}

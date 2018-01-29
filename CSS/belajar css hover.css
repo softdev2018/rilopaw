@@ -1,0 +1,40 @@
+<!DOCTYPEhtml>
+<html>
+  <head>
+    <title>Belajar CSS3</title>
+    <meta charset="utf-8">
+
+    <style>
+      div{
+        width: 100px; height: 100px; background: blue; margin-bottom: 5px;
+        transition: width 1s, background 1s, height 1s;
+      }
+
+      #tran1:hover{
+        width: 800px;
+        height: 300px;
+      }
+
+      #tran2:hover{
+        transition-delay: 1s;
+        background: red;
+        height: 400px;
+      }
+      #tran3:hover{
+        transition-timing-function:ease-in-out;
+        height: 200px;
+      }
+    </style>
+  </head>
+
+  <body>
+
+    <h1>Transition</h1>
+    <div id="tran1"></div>
+    <div id="tran2"></div>
+    <div id="tran3"></div>
+
+
+  </body>
+
+</html>

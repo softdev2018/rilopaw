@@ -1,0 +1,112 @@
+<!DOCTYPE html> <!-- untuk html5 -->
+<html> <!-- program ini mulai dibuat pada 9 agustus 2017 -->
+
+<!-- file ini khusus untuk halaman kontak -->
+  <head>
+    <title> Belajar HTML </title>
+    <meta charset="UTF-8">
+
+    <link rel="stylesheet" href="../style.css">
+  </head>
+<!-- ini komentar coy -->
+  <body>
+    <!-- menu website -->
+    <div>
+      <a href="../index.html" class="menu">Home</a>
+      <a href="kontak.html"   class="menu">Kontak</a>
+    </div>
+
+    <div>
+      <h1> Kontak Rilo Pambudi </h1>
+      <h2> Future <sapn>Programmer</span> </h2>
+    </div>
+    <br>
+    <!-- membuat form -->
+    <form>
+      <fieldset>
+      <legend> Form </legend>
+      <label for="nama_user"> Nama </label>
+      <input type="text" placeholder="Nama Anda" id="nama_user">
+      <br>
+      <label for="semester"> Semester</label>
+      <input type="text" value="Saya Mahasiswa Semester " id="semester">
+      <br>
+      <label for="pesan"> Pesan </label>
+      <textarea cols="70" rows="4" id="pesan"> Pesan saya... </textarea>
+      <br>
+      <label>Hobi</label><br>
+      <input type="checkbox" name="hobi" value="0">Melukis<br>
+      <input type="checkbox" name="hobi" value="0" checked>Menulis<br>
+      <input type="checkbox" name="hobi" value="0">Menyanyi
+      <br>
+      <label>Jenis Kelamin</label><br>
+      <input type="radio" name="gender" value="0">Laki - laki
+      <input type="radio" name="gender" value="0">Perempuan
+      <br>
+      <label>Hewan Kesukaan</label><br>
+      <select>
+        <optgroup label="Darat">
+        <option value="anjing">Anjing</option>
+        <option value="kucing">Kucing</option>
+      </optgroup>
+      <optgroup label="Air">
+        <option value="ikan">Ikan</option>
+        <option value="Buaya">Buaya</option>
+      </optgroup>
+      </select>
+    </fieldset>
+      <br>
+      <input type="submit" value="Submit">
+    </form>
+
+    <div>
+      <!-- membuat tabel -->
+      <table border="3">
+        <caption> Nama & Asal Kota </caption>
+        <tr>
+          <th>Nama</th>
+          <th>Asal</th>
+          <th>Tahun</th>
+        </tr>
+        <tr>
+          <td>Rilo</td>
+          <td>Jakarta</td>
+        </tr>
+        <tr>
+          <td>Joko</td>
+          <td>Jambi</td>
+        </tr>
+      </table>
+    </div>
+
+    <div>
+      <!-- membuat list -->
+      <ul>
+        <li>Rilo</li>
+        <li>Joko</li>
+      </ul>
+
+      <ol>
+        <li>Rilo</li>
+        <li>Joko</li>
+      </ol>
+
+      <dl>
+        <dt>Rilo</dt>
+        <dd>Sedang belajar koding</dd>
+
+        <dt>Joko</dt>
+        <dd>Sudah master koding</dd>
+      </dl>
+    </div>
+
+    <div>
+      <p>Mata uang jepang adalah &yen</p>
+      <p>Untuk lebih lengkapnya bisa dilihat di</p>
+      <a href="https://www.w3schools.com/html/html_entities.asp" target="_blank"> HTML Entities</a>
+    </div>
+
+    <p id="copyright"> &copy Rilopaw </p>
+  </body>
+
+</html>
