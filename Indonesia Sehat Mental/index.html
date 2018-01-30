@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+  <title>Indonesia Sehat Mental</title>
+</head>
+
+<body>
+  <header>
+    <div class="w3-bar w3-light-grey">
+      <a href="comingsoon.html" class="w3-bar-item w3-button">Home</a>
+      <a href="comingsoon.html" class="w3-bar-item w3-button">About</a>
+      <div class="w3-dropdown-hover">
+        <button class="w3-button">Konsultasi</button>
+        <div class="w3-dropdown-content w3-bar-block w3-card-4">
+          <a href="#" class="w3-bar-item w3-button">Masalah Pekerjaan</a>
+          <a href="#" class="w3-bar-item w3-button">Masalah Keuangan</a>
+          <a href="#" class="w3-bar-item w3-button">Masalah Keluarga</a>
+        </div>
+      </div>
+    </div>
+  </header>
+  <div class="w3-container">
+    <img src="gambar/pic1.png" alt="" height="60" width="60">
+    <h2>Indonesia Sehat Mental</h2>
+    <p></p>
+
+    <div class="w3-content" style="max-width:400px">
+      <div class="mySlides w3-container w3-red">
+        <h1><b>Apakah kalian tahu?</b></h1>
+        <h1><i>Kesehatan mental tidak kalah penting dengan kesehatan tubuh</i></h1>
+      </div>
+
+      <img class="mySlides" src="https://pinterpolitik.com/wp-content/uploads/2017/11/Darurat-kesehatan-mental.jpg" style="width:100%">
+      <img class="mySlides" src="https://pinterpolitik.com/wp-content/uploads/2017/11/Darurat-kesehatan-mental2.jpg" style="width:100%">
+      <div class="mySlides w3-container w3-xlarge w3-white w3-card-4">
+        <p><span class="w3-tag w3-blue">Ayo!</span>
+          <p>Bersama - sama</p>
+          <p>menebar kebahagiaan</p>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    var slideIndex = 0;
+    carousel();
+
+    function carousel() {
+      var i;
+      var x = document.getElementsByClassName("mySlides");
+      for (i = 0; i < x.length; i++) {
+        x[i].style.display = "none";
+      }
+      slideIndex++;
+      if (slideIndex > x.length) {
+        slideIndex = 1
+      }
+      x[slideIndex - 1].style.display = "block";
+      setTimeout(carousel, 2000);
+    }
+  </script>
+</body>
+<footer>
+  <p class="w3-center"> Dibuat oleh : Rilo P A W </p>
+  <p class="w3-center"> &copy; rilopaw </p>
+</footer>
+
+</html>
