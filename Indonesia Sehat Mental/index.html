@@ -5,6 +5,42 @@
   <meta charset="utf-8">
   <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
   <title>Indonesia Sehat Mental</title>
+  <style>
+  .slideshow{
+    width: 400px;
+    height: 400px;
+  }
+  .tombol-lampu{
+    width: 400px;
+    height: 300px;
+  }
+  h3{
+    text-align: center;
+  }
+  #kotak{
+    width: 400px;
+    height: 400px;
+  }
+  .kotak-muter {
+    width: 100px;
+    height: 100px;
+    background-color: red;
+    position: relative;
+
+    animation-name: example;
+    animation-duration: 4s;
+    animation-iteration-count: infinite;
+}
+
+/* Standard syntax */
+@keyframes example {
+    0%   {background-color:cyan; left:0px; top:0px;}
+    25%  {background-color:orange; left:200px; top:0px;}
+    50%  {background-color:lime; left:200px; top:200px;}
+    75%  {background-color:magenta; left:0px; top:200px;}
+    100% {background-color:cyan; left:0px; top:0px;}
+}
+  </style>
 </head>
 
 <body>
@@ -27,7 +63,8 @@
     <h2>Indonesia Sehat Mental</h2>
     <p></p>
 
-    <div class="w3-content" style="max-width:400px">
+    <p id="hari"></p>
+    <div class="slideshow" style="max-width:400px">
       <div class="mySlides w3-container w3-red">
         <h1><b>Apakah kalian tahu?</b></h1>
         <h1><i>Kesehatan mental tidak kalah penting dengan kesehatan tubuh</i></h1>
@@ -42,7 +79,18 @@
       </div>
     </div>
   </div>
+  <div class="tombol-lampu">
+    <h3>Tombol lampu</h3>
 
+<button onclick="document.getElementById('myImage').src='gambar/pic_bulbon.gif'">Turn on the light</button>
+
+<img id="myImage" src="gambar/pic_bulboff.gif" style="width:100px">
+
+<button onclick="document.getElementById('myImage').src='gambar/pic_bulboff.gif'">Turn off the light</button>
+  </div>
+  <div id="kotak">
+    <div class="kotak-muter"> </div>
+  </div>
   <script>
     var slideIndex = 0;
     carousel();
@@ -59,6 +107,33 @@
       }
       x[slideIndex - 1].style.display = "block";
       setTimeout(carousel, 2000);
+
+
+      var day;
+      switch (new Date().getDay()) {
+        case 0:
+          day = "Minggu";
+          break;
+        case 1:
+          day = "Senin";
+          break;
+        case 2:
+          day = "Selasa";
+          break;
+        case 3:
+          day = "Rabu";
+          break;
+        case 4:
+          day = "Kamis";
+          break;
+        case 5:
+          day = "Jumat";
+          break;
+        case 6:
+          day = "Sabtu";
+      }
+      document.getElementById("hari").innerHTML = "Sekarang hari " + day;
+
     }
   </script>
 </body>
