@@ -3,3 +3,6 @@ https://www.w3schools.com/w3css/w3css_dropdowns.asp
 https://www.w3schools.com/css/css3_box-sizing.asp
 https://www.w3schools.com/css/css3_backgrounds.asp
 https://sekolahkoding.com/kelas/belajar-javascript-untuk-pemula
+https://www.w3schools.com/css/css_form.asp
+https://www.w3schools.com/w3css/w3css_templates.asp
+https://www.w3schools.com/w3css/w3css_buttons.asp
