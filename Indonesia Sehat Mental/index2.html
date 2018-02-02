@@ -11,6 +11,49 @@
     font-family: "Lato", sans-serif
   }
 
+  body, html {
+      height: 100%;
+  }
+  .progress-container {
+  width: 100%;
+  height: 5px;
+  background: #000000;
+}
+
+.scroll-bar {
+  height: 5px;
+  background: #ccc;
+  width: 0%;
+}
+#header-scroll {
+  position: fixed;
+  top: 44;
+  z-index: 1;
+  width: 100%;
+  background-color: #f1f1f1;
+}
+
+  .parallax {
+      /* The image used */
+      background-image: url('gambar/parallax.jpg');
+
+      /* Full height */
+      height: 100%;
+
+      /* Create the parallax scrolling effect */
+      background-attachment: fixed;
+      background-position: center;
+      background-repeat: no-repeat;
+      background-size: cover;
+  }
+
+  /* Turn off parallax scrolling for tablets and phones. Increase the pixels if needed */
+  @media only screen and (max-device-width: 1024px) {
+      .parallax {
+          background-attachment: scroll;
+      }
+  }
+
   .mySlides {
     display: none
   }
@@ -50,6 +93,20 @@ input[type=submit]:hover {
     background-color: #45a049;
 }
 
+#myProgress {
+  width: 100%;
+  background-color: #ddd;
+}
+
+#myBar {
+  width: 0%;
+  height: 30px;
+  background-color: #4CAF50;
+  text-align: center;
+  line-height: 30px;
+  color: white;
+}
+
 .container {
     border-radius: 5px;
     background-color: #f2f2f2;
@@ -83,9 +140,71 @@ input[type=submit]:hover {
         margin-top: 0;
     }
 }
+/*/ ini jika ingin menggunakan fixed footer
+footer {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    background-color: red;
+    color: white;
+    text-align: center;
+}/*/
+
+/* Center the loader */
+#loader {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  z-index: 1;
+  width: 150px;
+  height: 150px;
+  margin: -75px 0 0 -75px;
+  border: 16px solid #f3f3f3;
+  border-radius: 50%;
+  border-top: 16px solid #4caf50;
+  width: 120px;
+  height: 120px;
+  -webkit-animation: spin 1.5s linear infinite;
+  animation: spin 1.5s linear infinite;
+}
+
+@-webkit-keyframes spin {
+  0% { -webkit-transform: rotate(0deg); }
+  100% { -webkit-transform: rotate(360deg); }
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+/* Add animation to "page content" */
+.animate-bottom {
+  position: relative;
+  -webkit-animation-name: animatebottom;
+  -webkit-animation-duration: 1s;
+  animation-name: animatebottom;
+  animation-duration: 1s
+}
+
+@-webkit-keyframes animatebottom {
+  from { bottom:-100px; opacity:0 }
+  to { bottom:0px; opacity:1 }
+}
+
+@keyframes animatebottom {
+  from{ bottom:-100px; opacity:0 }
+  to{ bottom:0; opacity:1 }
+}
+
+#loading-circle {
+  display: none;
+  text-align: center;
+}
 </style>
 
-<body>
+<body onload="loadingcircle()" style="margin:0;">
 
   <!-- Navbar -->
   <div class="w3-top">
@@ -114,10 +233,17 @@ input[type=submit]:hover {
     <a href="#contact" class="w3-bar-item w3-button w3-padding-large">KONSULTASI </a>
     <a href="#" class="w3-bar-item w3-button w3-padding-large">NOT READY</a>
   </div>
+  <div id="header-scroll">
+  <!-- progress bar -->
+  <div class="progress-container">
+    <div class="scroll-bar" id="scrollbar"></div>
+  </div>
+</div>
 
   <!-- Page content -->
   <div class="w3-content" style="max-width:2000px;margin-top:46px">
-    <div class="slideshow">
+    <div id="loader"></div>
+    <div class="slideshow animate-bottom" style="display:none;" id="loading-circle" >
       <!-- Automatic Slideshow Images -->
       <div class="mySlides w3-display-container w3-center">
         <img src="gambar/1.gif" style="width:100%;height:650px">
@@ -149,27 +275,25 @@ input[type=submit]:hover {
       </div>
     </div>
 
-    <!-- The Band Section -->
+    <div class="parallax"></div>
+
+    <!-- Loading circle -->
     <div class="w3-container w3-content w3-center w3-padding-64" style="max-width:800px" id="band">
       <h2 class="w3-wide">MENTAL</h2>
       <p class="w3-opacity"><i>Let's make the world better</i></p>
       <p class="w3-justify">Kata mental diambil dari bahasa Latin yaitu dari kata mens atau metis yang memiliki arti jiwa, nyawa, sukma, roh, semangat. Dengan demikian mental ialah hal-hal yang berkaitan dengan psycho atau kejiwaan yang dapat mempengaruhi perilaku individu.
         Setiap perilaku dan ekspresi gerak-gerik individu merupakan dorongan dan cerminan dari kondisi (suasana) mental.</p>
-      <div class="w3-row w3-padding-32">
-        <div class="w3-third">
-          <p>Name</p>
-          <img src="/w3images/bandmember.jpg" class="w3-round w3-margin-bottom" alt="Random Name" style="width:60%">
-        </div>
-        <div class="w3-third">
-          <p>Name</p>
-          <img src="/w3images/bandmember.jpg" class="w3-round w3-margin-bottom" alt="Random Name" style="width:60%">
-        </div>
-        <div class="w3-third">
-          <p>Name</p>
-          <img src="/w3images/bandmember.jpg" class="w3-round" alt="Random Name" style="width:60%">
-        </div>
+      <h1>Progress Bar</h1>
+
+      <div id="myProgress">
+        <div id="myBar">0%</div>
       </div>
+
+      <br>
+      <button onclick="move()">Mulai</button>
     </div>
+
+    <div class="parallax"></div>
 
     <!-- The Tour Section -->
     <div class="w3-black" id="tour">
@@ -245,6 +369,8 @@ input[type=submit]:hover {
       </div>
     </div>
 
+    <div class="parallax"></div>
+
     <!-- The Contact Section -->
     <div class="w3-container w3-content w3-padding-64" style="max-width:800px" id="contact">
       <h2 class="w3-wide w3-center">KONTAK</h2>
@@ -288,6 +414,17 @@ input[type=submit]:hover {
   </footer>
 
   <script>
+
+  // Progress bar berjalan saat scroll
+window.onscroll = function() {scrollbar()};
+
+function scrollbar() {
+  var winScroll = document.body.scrollTop || document.documentElement.scrollTop;
+  var height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+  var scrolled = (winScroll / height) * 100;
+  document.getElementById("scrollbar").style.width = scrolled + "%";
+}
+
     // Automatic Slideshow - change image every 4 seconds
     var myIndex = 0;
     carousel();
@@ -323,6 +460,31 @@ input[type=submit]:hover {
         modal.style.display = "none";
       }
     }
+    function move() {
+  var elem = document.getElementById("myBar");
+  var width = 0;
+  var id = setInterval(frame, 50);
+  function frame() {
+    if (width >= 100) {
+      clearInterval(id);
+    } else {
+      width++;
+      elem.style.width = width + '%';
+      elem.innerHTML = width * 1  + '%';
+    }
+  }
+}
+
+var myVar;
+
+function loadingcircle() {
+    myVar = setTimeout(showPage, 1500);
+}
+
+function showPage() {
+  document.getElementById("loader").style.display = "none";
+  document.getElementById("loading-circle").style.display = "block";
+}
   </script>
 
 </body>
