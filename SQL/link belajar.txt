@@ -1,0 +1,3 @@
+http://mbahgoez.github.io/blog/sql/query-dasar-sql-yang-harus-kamu-ketahui-ketika-belajar-database-dan-soal/
+https://www.w3schools.com/sql/default.asp
+https://www.duniailkom.com/tutorial-belajar-mysql-dasar-untuk-pemula/
