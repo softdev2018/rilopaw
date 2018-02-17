@@ -33,29 +33,10 @@
   background-color: #f1f1f1;
 }
 
-  .parallax {
-      /* The image used */
-      background-image: url('gambar/parallax.jpg');
-
-      /* Full height */
-      height: 100%;
-
-      /* Create the parallax scrolling effect */
-      background-attachment: fixed;
-      background-position: center;
-      background-repeat: no-repeat;
-      background-size: cover;
-  }
-
-  /* Turn off parallax scrolling for tablets and phones. Increase the pixels if needed */
-  @media only screen and (max-device-width: 1024px) {
-      .parallax {
-          background-attachment: scroll;
-      }
-  }
 
   .mySlides {
     display: none
+    background-color: transparent
   }
 
   .slideshow {
@@ -64,7 +45,10 @@
   {
     box-sizing: border-box;
 }
-
+.parallax-window {
+    min-height: 400px;
+    background: transparent;
+}
 input[type=text], select, textarea{
     width: 100%;
     padding: 12px;
@@ -140,6 +124,7 @@ input[type=submit]:hover {
         margin-top: 0;
     }
 }
+
 /*/ ini jika ingin menggunakan fixed footer
 footer {
     position: fixed;
@@ -204,7 +189,7 @@ footer {
 }
 </style>
 
-<body onload="loadingcircle()" style="margin:0;">
+<body style="margin:0;">
 
   <!-- Navbar -->
   <div class="w3-top">
@@ -242,8 +227,8 @@ footer {
 
   <!-- Page content -->
   <div class="w3-content" style="max-width:2000px;margin-top:46px">
-    <div id="loader"></div>
-    <div class="slideshow animate-bottom" style="display:none;" id="loading-circle" >
+
+
       <!-- Automatic Slideshow Images -->
       <div class="mySlides w3-display-container w3-center">
         <img src="gambar/1.gif" style="width:100%;height:650px">
@@ -273,11 +258,11 @@ footer {
           <p><b></b></p>
         </div>
       </div>
-    </div>
 
-    <div class="parallax"></div>
 
-    <!-- Loading circle -->
+
+
+  <div class="parallax-window" data-parallax="scroll" data-image-src="gambar/parallax.jpg"></div>
     <div class="w3-container w3-content w3-center w3-padding-64" style="max-width:800px" id="band">
       <h2 class="w3-wide">MENTAL</h2>
       <p class="w3-opacity"><i>Let's make the world better</i></p>
@@ -293,9 +278,10 @@ footer {
       <button onclick="move()">Mulai</button>
     </div>
 
-    <div class="parallax"></div>
+
 
     <!-- The Tour Section -->
+    <div class="parallax-window" data-parallax="scroll" data-image-src="gambar/parallax.jpg"></div>
     <div class="w3-black" id="tour">
       <div class="w3-container w3-content w3-padding-64" style="max-width:800px">
         <h2 class="w3-wide w3-center">KONSULTASI</h2>
@@ -310,14 +296,6 @@ footer {
               </div>
               <div class="col-75">
                 <input type="text" id="fname" name="firstname" placeholder="Your name..">
-              </div>
-            </div>
-            <div class="row">
-              <div class="col-25">
-                <label for="lname">Nama Panggilan</label>
-              </div>
-              <div class="col-75">
-                <input type="text" id="lname" name="lastname" placeholder="Your last name..">
               </div>
             </div>
             <div class="row">
@@ -350,27 +328,10 @@ footer {
       </div>
     </div>
 
-    <!-- Ticket Modal -->
-    <div id="ticketModal" class="w3-modal">
-      <div class="w3-modal-content w3-animate-top w3-card-4">
-        <header class="w3-container w3-teal w3-center w3-padding-32">
-          <span onclick="document.getElementById('ticketModal').style.display='none'" class="w3-button w3-teal w3-xlarge w3-display-topright">×</span>
-          <h2 class="w3-wide"><i class="fa fa-suitcase w3-margin-right"></i>Tickets</h2>
-        </header>
-        <div class="w3-container">
-          <p><label><i class="fa fa-shopping-cart"></i> Tickets, $15 per person</label></p>
-          <input class="w3-input w3-border" type="text" placeholder="How many?">
-          <p><label><i class="fa fa-user"></i> Send To</label></p>
-          <input class="w3-input w3-border" type="text" placeholder="Enter email">
-          <button class="w3-button w3-block w3-teal w3-padding-16 w3-section w3-right">PAY <i class="fa fa-check"></i></button>
-          <button class="w3-button w3-red w3-section" onclick="document.getElementById('ticketModal').style.display='none'">Close <i class="fa fa-remove"></i></button>
-          <p class="w3-right">Need <a href="#" class="w3-text-blue">help?</a></p>
-        </div>
-      </div>
-    </div>
 
-    <div class="parallax"></div>
 
+
+    <div class="parallax-window" data-parallax="scroll" data-image-src="gambar/parallax.jpg"></div>
     <!-- The Contact Section -->
     <div class="w3-container w3-content w3-padding-64" style="max-width:800px" id="contact">
       <h2 class="w3-wide w3-center">KONTAK</h2>
@@ -388,7 +349,7 @@ footer {
                 <input class="w3-input w3-border" type="text" placeholder="Name" required name="Name">
               </div>
               <div class="w3-half">
-                <input class="w3-input w3-border" type="text" placeholder="Email" required name="Email">
+                <input class="w3-input w3-border" type="email" placeholder="Email" required name="Email">
               </div>
             </div>
             <input class="w3-input w3-border" type="text" placeholder="Message" required name="Message">
@@ -412,7 +373,8 @@ footer {
     <i class="fa fa-linkedin w3-hover-opacity"></i>
     <p class="w3-medium">Powered by <a href="https://www.w3schools.com/w3css/default.asp" target="_blank">w3.css</a></p>
   </footer>
-
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+  <script src="parallax.js"></script>
   <script>
 
   // Progress bar berjalan saat scroll

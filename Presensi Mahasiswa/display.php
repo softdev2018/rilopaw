@@ -28,7 +28,6 @@ $result = mysqli_query($mysqli, "SELECT nim,nama,jurusan,waktu_hadir from data_m
         echo "<td>".$user_data['nama']."</td>";
         echo "<td>".$user_data['jurusan']."</td>";
         echo "<td>".$user_data['waktu_hadir']."</td>";
-        echo "<td><a href='delete.php?id=$user_data[id]'>Delete</a></td></tr>";
     }
     ?>
     </table>

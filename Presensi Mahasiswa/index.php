@@ -1,6 +1,8 @@
 <!DOCTYPE HTML>
 
 <?php
+$dt = new DateTime();
+echo $dt->format('Y-m-d H:i:s');
 $servername = "localhost";
 $username="root";
 $password="paw";
@@ -23,8 +25,10 @@ if(isset($_POST['submit'])){
 		if($register_result){
 			if(mysqli_affected_rows($conn)>0){
 				echo("registration successful");
+				header('Location: presensi.php');
 			}else{
 				echo("error in registration");
+				header('Location:index.php');
 			}
 
 		}
